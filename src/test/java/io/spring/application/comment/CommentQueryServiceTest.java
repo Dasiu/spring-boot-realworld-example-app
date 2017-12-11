@@ -9,13 +9,14 @@ import io.spring.core.comment.CommentRepository;
 import io.spring.core.user.FollowRelation;
 import io.spring.core.user.User;
 import io.spring.core.user.UserRepository;
+import io.spring.infrastructure.CustomMybatisTest;
 import io.spring.infrastructure.repository.MyBatisArticleRepository;
 import io.spring.infrastructure.repository.MyBatisCommentRepository;
 import io.spring.infrastructure.repository.MyBatisUserRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -26,7 +27,7 @@ import java.util.Optional;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
-@MybatisTest
+@CustomMybatisTest
 @RunWith(SpringRunner.class)
 @Import({MyBatisCommentRepository.class, MyBatisUserRepository.class, CommentQueryService.class, MyBatisArticleRepository.class})
 public class CommentQueryServiceTest {

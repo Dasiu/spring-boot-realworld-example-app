@@ -18,6 +18,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.context.annotation.Import;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.Optional;
@@ -32,6 +33,7 @@ import static org.mockito.Mockito.when;
 
 @WebMvcTest(ArticleFavoriteApi.class)
 @Import({WebSecurityConfig.class, JacksonCustomizations.class})
+@Rollback(false)
 public class ArticleFavoriteApiTest extends TestWithCurrentUser {
     @Autowired
     private MockMvc mvc;

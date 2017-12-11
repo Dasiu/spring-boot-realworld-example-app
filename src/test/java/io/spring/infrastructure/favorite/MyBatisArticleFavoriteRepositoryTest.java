@@ -2,12 +2,14 @@ package io.spring.infrastructure.favorite;
 
 import io.spring.core.favorite.ArticleFavorite;
 import io.spring.core.favorite.ArticleFavoriteRepository;
+import io.spring.infrastructure.CustomMybatisTest;
 import io.spring.infrastructure.repository.MyBatisArticleFavoriteRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
+import org.springframework.test.annotation.Rollback;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.hamcrest.CoreMatchers.is;
@@ -15,8 +17,9 @@ import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
-@MybatisTest
+@CustomMybatisTest
 @Import({MyBatisArticleFavoriteRepository.class})
+@Rollback(false)
 public class MyBatisArticleFavoriteRepositoryTest {
     @Autowired
     private ArticleFavoriteRepository articleFavoriteRepository;

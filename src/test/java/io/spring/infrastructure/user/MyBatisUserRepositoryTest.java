@@ -3,11 +3,12 @@ package io.spring.infrastructure.user;
 import io.spring.core.user.FollowRelation;
 import io.spring.core.user.User;
 import io.spring.core.user.UserRepository;
+import io.spring.infrastructure.CustomMybatisTest;
 import io.spring.infrastructure.repository.MyBatisUserRepository;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mybatis.spring.boot.test.autoconfigure.MybatisTest;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Import;
 import org.springframework.test.context.junit4.SpringRunner;
@@ -18,7 +19,7 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 @RunWith(SpringRunner.class)
-@MybatisTest
+@CustomMybatisTest
 @Import(MyBatisUserRepository.class)
 public class MyBatisUserRepositoryTest {
     @Autowired
