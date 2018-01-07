@@ -51,6 +51,7 @@ public class UsersApi {
 
     @RequestMapping(path = "/users", method = POST)
     public ResponseEntity createUser(@Valid @RequestBody RegisterParam registerParam, BindingResult bindingResult) {
+        // TODO
         checkInput(registerParam, bindingResult);
 
         User user = new User(

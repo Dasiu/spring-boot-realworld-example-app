@@ -44,6 +44,11 @@ dependencies {
 	testCompile 'io.rest-assured:spring-mock-mvc:3.0.2'
 	// https://mvnrepository.com/artifact/mysql/mysql-connector-java
 	compile group: 'mysql', name: 'mysql-connector-java', version: '5.1.45'
+	compile group: 'io.springfox', name: 'springfox-swagger2', version: '2.7.0'
+	// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
+// https://mvnrepository.com/artifact/io.springfox/springfox-swagger-ui
+	compile group: 'io.springfox', name: 'springfox-swagger-ui', version: '2.7.0'
 
 	testCompile 'org.springframework.security:spring-security-test:4.0.4.RELEASE'
 	testCompile('org.springframework.boot:spring-boot-starter-test')

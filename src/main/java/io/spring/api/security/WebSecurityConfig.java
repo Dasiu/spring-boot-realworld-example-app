@@ -36,6 +36,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
             .antMatchers(HttpMethod.GET, "/articles/feed").authenticated()
             .antMatchers(HttpMethod.POST, "/users", "/users/login").permitAll()
             .antMatchers(HttpMethod.GET, "/articles/**", "/profiles/**", "/tags").permitAll()
+            .antMatchers(HttpMethod.GET, "/webjars/**").permitAll()
+            .antMatchers(HttpMethod.GET, "/swagger-resources/**").permitAll()
+            .antMatchers(HttpMethod.GET, "/v2/**").permitAll()
+            .antMatchers(HttpMethod.GET, "/swagger-ui.html", "swagger**", "swagger-ui.html/**", "swagger-ui.html#!/**").permitAll()
+            .antMatchers(HttpMethod.POST, "/swagger-ui.html", "swagger**", "swagger-ui.html/**", "swagger-ui.html#!/**").permitAll()
+            .antMatchers(HttpMethod.DELETE, "/swagger-ui.html", "swagger**", "swagger-ui.html/**", "swagger-ui.html#!/**").permitAll()
+            .antMatchers(HttpMethod.OPTIONS, "/swagger-ui.html", "swagger**", "swagger-ui.html/**", "swagger-ui.html#!/**").permitAll()
+            .antMatchers(HttpMethod.PUT, "/swagger-ui.html", "swagger**", "swagger-ui.html/**", "swagger-ui.html#!/**").permitAll()
             .anyRequest().authenticated();
 
         http.addFilterBefore(jwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
