@@ -82,9 +82,10 @@ public class ArticleQueryService {
         Set<String> followingAuthors = userRelationshipQueryService.followingAuthors(
             currentUser.getId(),
             articles.stream().map(articleData1 -> articleData1.getProfileData().getId()).collect(toList()));
+
         articles.forEach(articleData -> {
             if (followingAuthors.contains(articleData.getProfileData().getId())) {
-                articleData.getProfileData().setFollowing(true);
+                articleData.getProfileData().setFollowing(false);
             }
         });
     }
